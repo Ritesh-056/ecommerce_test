@@ -17,13 +17,17 @@ class ProductLoadedState extends HomeState {
 }
 
 class ProductCartedState extends HomeState {
+  List<ProductDataModel> cartItems = [];
+
+  ProductCartedState(this.cartItems);
 
   @override
-  List<Object> get props => throw UnimplementedError();
+  List<Object> get props => [cartItems];
 }
 
 class ProductLoadErrorState extends HomeState {
   final String error;
+
   ProductLoadErrorState(this.error);
 
   @override

@@ -12,7 +12,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final ProductRepository _productRepository;
 
 
-
   HomeBloc(this._productRepository) : super(ProductLoadingState()) {
     on<LoadProductEvent>((event, emit) async {
       emit(ProductLoadingState());
@@ -26,7 +25,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<ProductCartEvent>((event, emit) async{
       cartItems.add(event.product);
       print("Clicked add to cart");
-      emit(ProductCartedState());
+      emit(ProductCartedState(List.from(cartItems)));
     });
   }
 }

@@ -1,16 +1,16 @@
-import 'package:apifetch/presentation/screen/cart/bloc/cart_bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:apifetch/domain/models/product_model.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter/material.dart';
 
 class AddToCartWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final ProductDataModel cartItems;
+
   const AddToCartWidget({
     super.key,
     required this.onPressed,
     required this.cartItems,
   });
+
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
@@ -57,7 +57,7 @@ class AddToCartWidget extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.grey.withOpacity(0.5),
             child: IconButton(
-              onPressed:onPressed,
+              onPressed: onPressed,
               icon: Icon(
                 Icons.close,
                 color: Color.fromARGB(255, 255, 85, 0),

@@ -17,8 +17,8 @@ class ProductTileWidget extends StatelessWidget {
       decoration:const  BoxDecoration(
       ),
       padding:const EdgeInsets.only(top: 30,left: 30,right: 30),
-      height: MediaQuery.of(context).size.height * 0.7,
-      width: MediaQuery.of(context).size.width,
+      // height: MediaQuery.of(context).size.height * 0.7,
+      // width: MediaQuery.of(context).size.width,
       child: Container(
          height: MediaQuery.of(context).size.height * 0.5,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color:Colors.blue.withOpacity(0.2)),
@@ -26,18 +26,18 @@ class ProductTileWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image(
-              height: MediaQuery.of(context).size.height * 0.3,
-              image: NetworkImage(
-                product.image,
-              ),
-            ),
+            // Image(
+            //   height: MediaQuery.of(context).size.height * 0.3,
+            //   image: NetworkImage(
+            //     product.image,
+            //   ),
+            // ),
             Text(product.title),
-            Row(
-              mainAxisAlignment:MainAxisAlignment.center,
+            Wrap(
+              // mainAxisAlignment:MainAxisAlignment.center,
               children: [
                 IconButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (_)=>WishListScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=> WishListScreen()));
                 }, icon:Icon(Icons.favorite,color:Color.fromARGB(255, 255, 85, 0),size: 30,)),
                   const SizedBox(width:20),
                 Text(product.price.toString()),
